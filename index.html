@@ -103,11 +103,18 @@
         <section class="complaint-list">
             <h2>Complaint Records</h2>
 
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search complaints..."
-            >
+         <input
+    type="text"
+    id="searchInput"
+    placeholder="Search complaints..."
+>
+
+<select id="statusFilter">
+    <option value="All">All Complaints</option>
+    <option value="Pending">Pending</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Resolved">Resolved</option>
+</select>
 
             <div class="table-container">
                 <table>

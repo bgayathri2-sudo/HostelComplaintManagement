@@ -3,7 +3,7 @@
 const complaintForm = document.getElementById("complaintForm");
 const complaintList = document.getElementById("complaintList");
 const searchInput = document.getElementById("searchInput");
-
+const statusFilter = document.getElementById("statusFilter");
 // Load complaints from browser storage
 let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
 
@@ -67,16 +67,21 @@ complaintForm.addEventListener("submit", function (event) {
 // Display complaints in the table
 function displayComplaints() {
     const searchText = searchInput.value.toLowerCase();
+const selectedStatus = statusFilter.value;
 
-    const filteredComplaints = complaints.filter(function (complaint) {
-        return (
-            complaint.studentName.toLowerCase().includes(searchText) ||
-            complaint.roomNumber.toLowerCase().includes(searchText) ||
-            complaint.category.toLowerCase().includes(searchText) ||
-            complaint.description.toLowerCase().includes(searchText) ||
-            complaint.status.toLowerCase().includes(searchText)
-        );
-    });
+const filteredComplaints = complaints.filter(function (complaint) {
+    const matchesSearch =
+        complaint.studentName.toLowerCase().includes(searchText) ||
+        complaint.roomNumber.toLowerCase().includes(searchText) ||
+        complaint.category.toLowerCase().includes(searchText) ||
+        complaint.description.toLowerCase().includes(searchText) ||
+        complaint.status.toLowerCase().includes(searchText);
+
+    const matchesStatus =
+        selectedStatus === "All" || complaint.status === selectedStatus;
+
+    return matchesSearch && matchesStatus;
+});
 
     complaintList.innerHTML = "";
 
@@ -151,7 +156,7 @@ complaintList.addEventListener("click", function (event) {
 
 // Search complaints
 searchInput.addEventListener("input", displayComplaints);
-
+statusFilter.addEventListener("change", displayComplaints);
 // Update dashboard statistics
 function updateStatistics() {
     const total = complaints.length;
