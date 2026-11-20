@@ -1,0 +1,197 @@
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #263b80, #536dca);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 15px;
+}
+
+/* Main Container */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* Section Styling */
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+section h2 {
+    color: #263b80;
+    margin-bottom: 20px;
+}
+
+/* Complaint Form */
+.complaint-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    margin-top: 12px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #536dca;
+    box-shadow: 0 0 4px rgba(83, 109, 202, 0.3);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Buttons */
+button {
+    background-color: #4058a8;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 12px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #263b80;
+}
+
+/* Dashboard Statistics */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.stat-card {
+    background-color: #eef1ff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border-left: 5px solid #536dca;
+}
+
+.stat-card h3 {
+    font-size: 15px;
+    color: #555;
+}
+
+.stat-card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #263b80;
+    margin-top: 8px;
+}
+
+/* Search Box */
+#searchInput {
+    margin-bottom: 15px;
+}
+
+/* Table */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+th {
+    background-color: #263b80;
+    color: white;
+    padding: 13px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f4f6fb;
+}
+
+/* Footer */
+footer {
+    background-color: #263b80;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    main {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 16px;
+    }
+}

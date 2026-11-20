@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hostel Complaint Management System</title>
+
+    <!-- Connecting CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Connecting JavaScript file -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Hostel Complaint Management System</h1>
+        <p>Submit and track your hostel complaints easily</p>
+    </header>
+
+    <main>
+
+        <!-- Complaint Registration Section -->
+        <section class="complaint-form">
+            <h2>Submit a Complaint</h2>
+
+            <form id="complaintForm">
+
+                <label for="studentName">Student Name</label>
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="roomNumber">Room Number</label>
+                <input
+                    type="text"
+                    id="roomNumber"
+                    placeholder="Enter your room number"
+                    required
+                >
+
+                <label for="category">Complaint Category</label>
+                <select id="category" required>
+                    <option value="">Select a category</option>
+                    <option value="Food">Food</option>
+                    <option value="Water">Water</option>
+                    <option value="Electricity">Electricity</option>
+                    <option value="Cleanliness">Cleanliness</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="description">Complaint Description</label>
+                <textarea
+                    id="description"
+                    placeholder="Describe your complaint"
+                    rows="4"
+                    required
+                ></textarea>
+
+                <button type="submit">Submit Complaint</button>
+
+            </form>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section class="dashboard">
+            <h2>Complaint Dashboard</h2>
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <h3>Total Complaints</h3>
+                    <p id="totalCount">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Pending</h3>
+                    <p id="pendingCount">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>In Progress</h3>
+                    <p id="progressCount">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Resolved</h3>
+                    <p id="resolvedCount">0</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Complaint List Section -->
+        <section class="complaint-list">
+            <h2>Complaint Records</h2>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search complaints..."
+            >
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Student Name</th>
+                            <th>Room Number</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="complaintList">
+                        <!-- Complaint records will be added using JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Hostel Complaint Management System | Mini Project</p>
+    </footer>
+
+</body>
+</html>
